@@ -1,0 +1,33 @@
+.hero-gradient {
+            position: relative;
+            z-index: 1;
+            color: black;
+            background-size: cover;
+
+        }
+        .hero-gradient::before{
+            content: "";
+            position:absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("https://www.wallpaperuse.com/wallp/31-311356_m.jpg");
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+.mb-10 {
+    /* margin-bottom: 2.5rem; */
+    /* height: 700px; */
+    /* width: 700px; */
+    display: abs;
+    background-color: #00000060;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+}
+.nav_bar {
+    background-color: #0009;
+}
+ 

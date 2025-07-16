@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Agriculture Monitoring System</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Google Maps API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+
+  <!-- Axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <style>
+    body {
+      background: url('https://www.wallpaperuse.com/wallp/31-311356_m.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .bg-overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  </style>
+</head>
+<body class="text-white">
+  <div class="min-h-screen bg-overlay">
+    
+    <!-- Navbar -->
+    <nav class="flex items-center justify-between px-6 py-4 bg-black bg-opacity-50 rounded-b-2xl">
+      <div class="flex items-center space-x-3">
+        <img src="https://cdn-icons-png.flaticon.com/512/2906/2906271.png" alt="Logo" class="w-10 h-10 rounded-full" />
+        <h1 class="text-xl md:text-2xl font-bold text-green-400">Smart Agri</h1>
+        <a href="https://incandescent-malabi-2b33c5.netlify.app/" class="px-4 py-2 text-green-300 font-medium hover:bg-green-700 hover:text-white rounded-lg transition">Home</a>
+        <a href="http://127.0.0.1:5500/marketPlace.html" class="px-4 py-2 text-green-300 font-medium hover:bg-green-700 hover:text-white rounded-lg transition">Market place</a>
+        <a href="http://127.0.0.1:5500/warehouse.html" class="px-4 py-2 text-green-300 font-medium hover:bg-green-700 hover:text-white rounded-lg transition">Warehouse</a>
+        <a href="http://127.0.0.1:5500/info.html" class="px-4 py-2 text-green-300 font-medium hover:bg-green-700 hover:text-white rounded-lg transition">Information</a>
+        <a href="http://127.0.0.1:5500/about.html" class="px-4 py-2 text-green-300 font-medium hover:bg-green-700 hover:text-white rounded-lg transition">About</a>
+      </div>
+      <div class="flex items-center space-x-4">
+        <input type="text" placeholder="kisan mitra" class="px-4 py-1 rounded-full text-black placeholder-gray-500 focus:outline-none" />
+        <a href="https://incandescent-malabi-2b33c5.netlify.app/" class="px-4 py-2 text-green-300 font-medium hover:bg-green-700 hover:text-white rounded-lg transition">Login</a>
+        <a href="https://incandescent-malabi-2b33c5.netlify.app/" class="hidden md:block px-4 py-2 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition">Register</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="text-center mt-10 px-4">
+      <h2 class="text-4xl md:text-5xl font-bold text-green-200 mb-3">Welcome to Smart Agriculture</h2>
+      <p class="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto">
+        Empowering farmers with real-time data, weather forecasts, and crop insights. Your smart companion in agriculture.
+      </p>
+    </header>
+
+    <!-- Weather Forecast Section -->
+    <section class="mt-12 px-4 md:px-12">
+      <div class="bg-white bg-opacity-20 backdrop-blur-md rounded-2xl p-6 shadow-lg">
+        <h3 class="text-2xl font-semibold text-green-300 mb-4"><i class="fas fa-cloud-sun"></i> Weather Forecast</h3>
+        <div class="flex justify-center">
+           <div class="relative bg-white bg-opacity-90 rounded-xl shadow-2xl p-6 mb-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">Local Weather Report</h3>
+                            <div class="flex items-center mb-4">
+                                <input type="text" id="locationInput" placeholder="Enter location" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-900">
+                                <button onclick="getWeather()" class="ml-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                            <div id="weatherInfo" class="text-center">
+                                <div class="flex justify-center mb-2">
+                                    <i id="weatherIcon" class="fas fa-sun text-4xl text-yellow-500"></i>
+                                </div>
+                                <h4 id="location" class="text-lg font-semibold text-gray-900">Current Location</h4>
+                                <div id="temperature" class="text-3xl font-bold my-2 text-gray-900">--°C</div>
+                                <div id="conditions" class="text-gray-700">--</div>
+                                <div id="humidityWind" class="flex justify-between mt-4 text-sm text-gray-700">
+                                    <span id="humidity">Humidity: --%</span>
+                                    <span id="wind">Wind: -- km/h</span>
+                                </div>
+                            </div>
+                        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Farmer Corner Section -->
+    <section class="mt-12 px-4 md:px-12">
+      <div class="bg-white bg-opacity-20 backdrop-blur-md rounded-2xl p-6 shadow-lg">
+        <h3 class="text-2xl font-semibold text-green-300 mb-6"><i class="fas fa-tractor"></i> Farmer Corner</h3>
+        <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <div class="bg-green-600 bg-opacity-80 rounded-xl p-4 shadow hover:bg-green-700 transition">
+            <h4 class="text-xl font-bold mb-2"><i class="fas fa-seedling"></i> Farming Tips</h4>
+            <p>Learn modern techniques to improve crop yield and sustainability with expert tips.</p>
+          </div>
+          <div class="bg-green-600 bg-opacity-80 rounded-xl p-4 shadow hover:bg-green-700 transition">
+            <h4 class="text-xl font-bold mb-2"><i class="fas fa-landmark"></i> Government Schemes</h4>
+            <p>Explore current agricultural schemes and subsidies available for Indian farmers.</p>
+          </div>
+          <div class="bg-green-600 bg-opacity-80 rounded-xl p-4 shadow hover:bg-green-700 transition">
+            <h4 class="text-xl font-bold mb-2"><i class="fas fa-newspaper"></i> Agri News</h4>
+            <p>Stay updated with the latest news in farming, market prices, and weather alerts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-16 py-6 text-center bg-black bg-opacity-40 rounded-t-2xl">
+      <p class="text-sm">&copy; 2025 Smart Agriculture Monitoring System | Made for Farmers 🌾</p>
+    </footer>
+  </div>
+</body>
+</html>
