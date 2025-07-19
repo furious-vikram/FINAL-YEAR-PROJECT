@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="min-h-screen bg-gradient">
+        <div class="container">
+            <!-- Header -->
+            <div class="header-section">
+                <div class="header-card">
+                    <div class="header-content">
+                        <div class="avatar">
+                            <span class="avatar-text">J</span>
+                        </div>
+                        <div class="header-text">
+                            <h1 class="header-title">Welcome back, John Farmer! 👋</h1>
+                            <p class="header-subtitle">Ready to grow your farming business today?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <div class="nav-tabs">
+                <div class="nav-container">
+                    <button class="nav-tab active" data-tab="overview">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Overview</span>
+                    </button>
+                    <button class="nav-tab" data-tab="sell">
+                        <i class="fas fa-plus"></i>
+                        <span>Sell Crops</span>
+                    </button>
+                    <button class="nav-tab" data-tab="seeds">
+                        <i class="fas fa-seedling"></i>
+                        <span>Buy Seeds</span>
+                    </button>
+                    <button class="nav-tab" data-tab="my-products">
+                        <i class="fas fa-box"></i>
+                        <span>My Products</span>
+                    </button>
+                    <button class="nav-tab" data-tab="my-warehouses">
+                        <i class="fas fa-warehouse"></i>
+                        <span>My Warehouses</span>
+                    </button>
+                    <button class="nav-tab" data-tab="warehouse">
+                        <i class="fas fa-warehouse"></i>
+                        <span>Rent Warehouse</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Content Sections -->
+            <div id="overview" class="tab-content active">
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stats-card green">
+                        <div class="stats-content">
+                            <div class="stats-text">
+                                <p class="stats-title">Total Sales</p>
+                                <p class="stats-value">$2,450</p>
+                                <p class="stats-subtitle">+12% from last month</p>
+                            </div>
+                            <div class="stats-icon green-bg">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stats-card blue">
+                        <div class="stats-content">
+                            <div class="stats-text">
+                                <p class="stats-title">Active Listings</p>
+                                <p class="stats-value">12</p>
+                                <p class="stats-subtitle">3 new this week</p>
+                            </div>
+                            <div class="stats-icon blue-bg">
+                                <i class="fas fa-box"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stats-card purple">
+                        <div class="stats-content">
+                            <div class="stats-text">
+                                <p class="stats-title">Orders Today</p>
+                                <p class="stats-value">8</p>
+                                <p class="stats-subtitle">2 pending delivery</p>
+                            </div>
+                            <div class="stats-icon purple-bg">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stats-card orange">
+                        <div class="stats-content">
+                            <div class="stats-text">
+                                <p class="stats-title">Customer Rating</p>
+                                <p class="stats-value">4.8</p>
+                                <p class="stats-subtitle">Based on 24 reviews</p>
+                            </div>
+                            <div class="stats-icon orange-bg">
+                                <i class="fas fa-users"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions-section">
+                    <h3 class="section-title">Quick Actions</h3>
+                    <div class="quick-actions-grid">
+                        <button class="quick-action-btn green-gradient" data-tab="sell">
+                            <div class="quick-action-content">
+                                <div class="quick-action-icon">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                                <div class="quick-action-text">
+                                    <p class="quick-action-title">Sell New Crops</p>
+                                    <p class="quick-action-subtitle">List your fresh produce</p>
+                                </div>
+                            </div>
+                        </button>
+                        <button class="quick-action-btn blue-gradient" data-tab="seeds">
+                            <div class="quick-action-content">
+                                <div class="quick-action-icon">
+                                    <i class="fas fa-seedling"></i>
+                                </div>
+                                <div class="quick-action-text">
+                                    <p class="quick-action-title">Buy Seeds</p>
+                                    <p class="quick-action-subtitle">Get quality seeds</p>
+                                </div>
+                            </div>
+                        </button>
+                        <button class="quick-action-btn purple-gradient" data-tab="warehouse">
+                            <div class="quick-action-content">
+                                <div class="quick-action-icon">
+                                    <i class="fas fa-warehouse"></i>
+                                </div>
+                                <div class="quick-action-text">
+                                    <p class="quick-action-title">Rent Warehouse</p>
+                                    <p class="quick-action-subtitle">Secure storage space</p>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Overview Sections -->
+                <div class="overview-grid">
+                    <div class="overview-section">
+                        <div class="overview-header">
+                            <h3 class="overview-title">My Products</h3>
+                            <button class="view-all-btn green" data-tab="my-products">View All →</button>
+                        </div>
+                        <div class="overview-items">
+                            <div class="overview-item">
+                                <div class="overview-item-content">
+                                    <div class="overview-item-icon green-bg">
+                                        <i class="fas fa-box"></i>
+                                    </div>
+                                    <div class="overview-item-text">
+                                        <p class="overview-item-name">Organic Tomatoes</p>
+                                        <p class="overview-item-details">100 kg • $4.50/kg</p>
+                                    </div>
+                                </div>
+                                <span class="status-badge active">Active</span>
+                            </div>
+                            <div class="overview-item">
+                                <div class="overview-item-content">
+                                    <div class="overview-item-icon green-bg">
+                                        <i class="fas fa-box"></i>
+                                    </div>
+                                    <div class="overview-item-text">
+                                        <p class="overview-item-name">Sweet Corn</p>
+                                        <p class="overview-item-details">75 kg • $3.20/kg</p>
+                                    </div>
+                                </div>
+                                <span class="status-badge active">Active</span>
+                            </div>
+                            <div class="overview-item">
+                                <div class="overview-item-content">
+                                    <div class="overview-item-icon green-bg">
+                                        <i class="fas fa-box"></i>
+                                    </div>
+                                    <div class="overview-item-text">
+                                        <p class="overview-item-name">Fresh Lettuce</p>
+                                        <p class="overview-item-details">50 kg • $2.80/kg</p>
+                                    </div>
+                                </div>
+                                <span class="status-badge inactive">Inactive</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="overview-section">
+                        <div class="overview-header">
+                            <h3 class="overview-title purple">My Warehouses</h3>
+                            <button class="view-all-btn purple" data-tab="my-warehouses">View All →</button>
+                        </div>
+                        <div class="overview-items">
+                            <div class="overview-item">
+                                <div class="overview-item-content">
+                                    <div class="overview-item-icon purple-bg">
+                                        <i class="fas fa-warehouse"></i>
+                                    </div>
+                                    <div class="overview-item-text">
+                                        <p class="overview-item-name">Green Valley Storage</p>
+                                        <p class="overview-item-details">Valley Road, Farmington</p>
+                                    </div>
+                                </div>
+                                <span class="status-badge rented">Rented</span>
+                            </div>
+                            <div class="overview-item-details-row">
+                                <span>$1200/month</span>
+                                <span class="expiry">Until March 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sell Crops Section -->
+            <div id="sell" class="tab-content">
+                <div class="content-card">
+                    <h2 class="page-title">List Your Crops for Sale</h2>
+                    <form class="crop-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label">Crop Name</label>
+                                <input type="text" class="form-input" placeholder="e.g., Organic Tomatoes" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Category</label>
+                                <select class="form-input" required>
+                                    <option value="">Select category</option>
+                                    <option value="vegetables">Vegetables</option>
+                                    <option value="fruits">Fruits</option>
+                                    <option value="grains">Grains</option>
+                                    <option value="herbs">Herbs</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Description</label>
+                            <textarea class="form-textarea" rows="4" placeholder="Describe your crop quality, growing methods, etc." required></textarea>
+                        </div>
+                        <div class="form-grid-3">
+                            <div class="form-group">
+                                <label class="form-label">Price per Unit</label>
+                                <input type="number" class="form-input" step="0.01" placeholder="0.00" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Quantity</label>
+                                <input type="number" class="form-input" placeholder="100" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Unit</label>
+                                <select class="form-input">
+                                    <option value="kg">Kilograms</option>
+                                    <option value="lbs">Pounds</option>
+                                    <option value="tons">Tons</option>
+                                    <option value="pieces">Pieces</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Product Image</label>
+                            <div class="upload-area">
+                                <i class="fas fa-upload upload-icon"></i>
+                                <p class="upload-text">Click to upload or drag and drop</p>
+                                <p class="upload-subtext">PNG, JPG up to 10MB</p>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary">Cancel</button>
+                            <button type="submit" class="btn-primary">
+                                <i class="fas fa-plus"></i>
+                                <span>List Crop</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Buy Seeds Section -->
+            <div id="seeds" class="tab-content">
+                <div class="content-card">
+                    <h2 class="page-title">Buy Quality Seeds</h2>
+                    <div class="search-filter">
+                        <div class="search-box">
+                            <i class="fas fa-search search-icon"></i>
+                            <input type="text" class="search-input" placeholder="Search seeds...">
+                        </div>
+                        <select class="filter-select">
+                            <option value="all">All Categories</option>
+                            <option value="vegetables">Vegetables</option>
+                            <option value="fruits">Fruits</option>
+                            <option value="grains">Grains</option>
+                            <option value="herbs">Herbs</option>
+                        </select>
+                    </div>
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <img src="https://images.pexels.com/photos/1327838/pexels-photo-1327838.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Tomato Seeds" class="product-image">
+                            <div class="product-content">
+                                <h3 class="product-name">Tomato Seeds - Cherry Variety</h3>
+                                <p class="product-description">High-yield cherry tomato seeds perfect for greenhouse or outdoor growing.</p>
+                                <div class="product-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="rating-text">4.8 (156 reviews)</span>
+                                </div>
+                                <div class="product-footer">
+                                    <span class="product-price">$12.99</span>
+                                    <button class="add-to-cart-btn">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        <span>Add to Cart</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://images.pexels.com/photos/547263/pexels-photo-547263.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Corn Seeds" class="product-image">
+                            <div class="product-content">
+                                <h3 class="product-name">Corn Seeds - Sweet Variety</h3>
+                                <p class="product-description">Premium sweet corn seeds with excellent germination rate.</p>
+                                <div class="product-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="rating-text">4.6 (89 reviews)</span>
+                                </div>
+                                <div class="product-footer">
+                                    <span class="product-price">$8.50</span>
+                                    <button class="add-to-cart-btn">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        <span>Add to Cart</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://images.pexels.com/photos/1656663/pexels-photo-1656663.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Lettuce Seeds" class="product-image">
+                            <div class="product-content">
+                                <h3 class="product-name">Lettuce Seeds - Butterhead</h3>
+                                <p class="product-description">Crisp butterhead lettuce seeds ideal for salad production.</p>
+                                <div class="product-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="rating-text">4.7 (203 reviews)</span>
+                                </div>
+                                <div class="product-footer">
+                                    <span class="product-price">$6.75</span>
+                                    <button class="add-to-cart-btn">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        <span>Add to Cart</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- My Products Section -->
+            <div id="my-products" class="tab-content">
+                <div class="content-card">
+                    <div class="page-header">
+                        <div class="page-header-text">
+                            <h2 class="page-title">My Product Listings</h2>
+                            <p class="page-subtitle">Manage and track your agricultural products</p>
+                        </div>
+                        <button class="btn-primary" data-tab="sell">
+                            <i class="fas fa-plus"></i>
+                            <span>Add New Product</span>
+                        </button>
+                    </div>
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <div class="product-image-container">
+                                <img src="https://images.pexels.com/photos/1327838/pexels-photo-1327838.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Organic Tomatoes" class="product-image">
+                                <span class="status-badge-overlay active">Active</span>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="product-name">Organic Tomatoes</h3>
+                                <p class="product-description">Fresh, locally grown organic tomatoes perfect for cooking and salads.</p>
+                                <div class="product-footer">
+                                    <span class="product-price">$4.50</span>
+                                    <span class="product-quantity">100 kg</span>
+                                </div>
+                                <button class="edit-product-btn">Edit Product</button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image-container">
+                                <img src="https://images.pexels.com/photos/547263/pexels-photo-547263.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Sweet Corn" class="product-image">
+                                <span class="status-badge-overlay active">Active</span>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="product-name">Sweet Corn</h3>
+                                <p class="product-description">Freshly harvested sweet corn, perfect for grilling or boiling.</p>
+                                <div class="product-footer">
+                                    <span class="product-price">$3.20</span>
+                                    <span class="product-quantity">75 kg</span>
+                                </div>
+                                <button class="edit-product-btn">Edit Product</button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image-container">
+                                <img src="https://images.pexels.com/photos/1656663/pexels-photo-1656663.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Fresh Lettuce" class="product-image">
+                                <span class="status-badge-overlay inactive">Inactive</span>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="product-name">Fresh Lettuce</h3>
+                                <p class="product-description">Crisp and fresh lettuce leaves, ideal for salads and sandwiches.</p>
+                                <div class="product-footer">
+                                    <span class="product-price">$2.80</span>
+                                    <span class="product-quantity">50 kg</span>
+                                </div>
+                                <button class="edit-product-btn">Edit Product</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- My Warehouses Section -->
+            <div id="my-warehouses" class="tab-content">
+                <div class="content-card">
+                    <div class="page-header">
+                        <div class="page-header-text">
+                            <h2 class="page-title">My Warehouse Rentals</h2>
+                            <p class="page-subtitle">Manage your storage facilities and rentals</p>
+                        </div>
+                        <button class="btn-primary purple" data-tab="warehouse">
+                            <i class="fas fa-plus"></i>
+                            <span>Rent New Warehouse</span>
+                        </button>
+                    </div>
+                    <div class="warehouses-grid">
+                        <div class="warehouse-card">
+                            <div class="warehouse-image-container">
+                                <img src="https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Green Valley Storage" class="warehouse-image">
+                                <span class="status-badge-overlay rented">Active Rental</span>
+                            </div>
+                            <div class="warehouse-content">
+                                <h3 class="warehouse-name">Green Valley Storage</h3>
+                                <p class="warehouse-description">Climate-controlled warehouse facility perfect for storing fresh produce and grains.</p>
+                                <div class="warehouse-details">
+                                    <div class="warehouse-detail">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>Valley Road, Farmington</span>
+                                    </div>
+                                    <div class="warehouse-detail">
+                                        <i class="fas fa-box"></i>
+                                        <span>Capacity: 500 tons</span>
+                                    </div>
+                                    <div class="warehouse-detail">
+                                        <i class="fas fa-dollar-sign"></i>
+                                        <span>$1200/month</span>
+                                    </div>
+                                    <div class="warehouse-detail">
+                                        <i class="fas fa-calendar"></i>
+                                        <span>Expires: March 2024</span>
+                                    </div>
+                                </div>
+                                <div class="warehouse-actions">
+                                    <button class="btn-primary blue">Extend Rental</button>
+                                    <button class="btn-secondary">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rent Warehouse Section -->
+            <div id="warehouse" class="tab-content">
+                <div class="content-card">
+                    <h2 class="page-title">Rent Storage Warehouse</h2>
+                    <div class="warehouses-grid">
+                        <div class="warehouse-card">
+                            <div class="warehouse-image-container">
+                                <img src="https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Green Valley Storage" class="warehouse-image">
+                                <span class="status-badge-overlay unavailable">Rented</span>
+                            </div>
+                            <div class="warehouse-content">
+                                <h3 class="warehouse-name">Green Valley Storage</h3>
+                                <p class="warehouse-description">Climate-controlled warehouse facility perfect for storing fresh produce and grains.</p>
+                                <div class="warehouse-details">
+                                    <div class="warehouse-detail">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>Valley Road, Farmington</span>
+                                    </div>
+                                    <div class="warehouse-detail">
+                                        <i class="fas fa-box"></i>
+                                        <span>Capacity: 500 tons</span>
+                                    </div>
+                                    <div class="warehouse-detail">
+                                        <i class="fas fa-dollar-sign"></i>
+                                        <span>$1200/month</span>
+                                    </div>
+                                </div>
+                                <button class="rent-btn disabled" disabled>Currently Unavailable</button>
+                            </div>
+                        </div>
+                        <div class="warehouse-card">
+                            <div class="warehouse-image-container">
+                                <img src="https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Sunrise Warehouse" class="warehouse-image">
+                                <span class="status-badge-overlay available">Available</span>
+                            </div>
+                            <div class="warehouse-content">
+                                <h3 class="warehouse-name">Sunrise Warehouse</h3>
+                                <p class="warehouse-description">Large storage facility with modern refrigeration systems.</p>
+                                <div class="warehouse-details">
+                                    <div class="warehouse-detail">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>Industrial District, Riverside</span>
+                                    </div>
+                                    <div class="warehouse-detail">
+                                        <i class="fas fa-box"></i>
+                                        <span>Capacity: 750 tons</span>
+                                    </div>
+                                    <div class="warehouse-detail">
+                                        <i class="fas fa-dollar-sign"></i>
+                                        <span>$1800/month</span>
+                                    </div>
+                                </div>
+                                <button class="rent-btn">Rent This Warehouse</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
