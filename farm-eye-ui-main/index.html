@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriSmart Monitor - Intelligent Agriculture Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-container">
+                <div class="header-left">
+                    <div class="logo">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="header-text">
+                        <h1>AgriSmart Monitor</h1>
+                        <p>Intelligent Agriculture Management System</p>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Farm Location: Jharkhand, India</span>
+                    </div>
+                    <div class="status-icons">
+                        <i class="fas fa-wifi status-icon active"></i>
+                        <i class="fas fa-battery-full status-icon active"></i>
+                        <i class="fas fa-database status-icon active"></i>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-container">
+            <!-- Current Time -->
+            <div class="time-section">
+                <h2>Real-Time Smart Agriculture Dashboard</h2>
+                <p>Last updated: <span id="current-time"></span> | All systems operational</p>
+            </div>
+
+            <!-- Environmental Monitoring -->
+            <section class="section">
+                <h3 class="section-title">
+                    <i class="fas fa-chart-line"></i>
+                    Environmental Monitoring
+                </h3>
+                <div class="grid-3">
+                    <div class="card sensor-card">
+                        <div class="card-header">
+                            <div class="sensor-info">
+                                <div class="sensor-icon temperature">
+                                    <i class="fas fa-thermometer-half"></i>
+                                </div>
+                                <div class="sensor-data">
+                                    <h4>Temperature</h4>
+                                    <p class="value">24°C</p>
+                                </div>
+                            </div>
+                            <span class="badge optimal">optimal</span>
+                        </div>
+                        <div class="card-footer">
+                            <p class="location">Greenhouse A</p>
+                            <div class="trend">
+                                <i class="fas fa-trending-up"></i>
+                                +2°C from yesterday
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card sensor-card">
+                        <div class="card-header">
+                            <div class="sensor-info">
+                                <div class="sensor-icon humidity">
+                                    <i class="fas fa-tint"></i>
+                                </div>
+                                <div class="sensor-data">
+                                    <h4>Humidity</h4>
+                                    <p class="value">68%</p>
+                                </div>
+                            </div>
+                            <span class="badge normal">normal</span>
+                        </div>
+                        <div class="card-footer">
+                            <p class="location">Field B</p>
+                            <div class="trend">
+                                <i class="fas fa-trending-up"></i>
+                                +5% from yesterday
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card sensor-card">
+                        <div class="card-header">
+                            <div class="sensor-info">
+                                <div class="sensor-icon light">
+                                    <i class="fas fa-sun"></i>
+                                </div>
+                                <div class="sensor-data">
+                                    <h4>Light Intensity</h4>
+                                    <p class="value">850 lux</p>
+                                </div>
+                            </div>
+                            <span class="badge good">good</span>
+                        </div>
+                        <div class="card-footer">
+                            <p class="location">Greenhouse A</p>
+                            <div class="trend">
+                                <i class="fas fa-trending-up"></i>
+                                +120 lux from yesterday
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card sensor-card">
+                        <div class="card-header">
+                            <div class="sensor-info">
+                                <div class="sensor-icon soil">
+                                    <i class="fas fa-seedling"></i>
+                                </div>
+                                <div class="sensor-data">
+                                    <h4>Soil Moisture</h4>
+                                    <p class="value">42%</p>
+                                </div>
+                            </div>
+                            <span class="badge low">low</span>
+                        </div>
+                        <div class="card-footer">
+                            <p class="location">Field C</p>
+                            <div class="trend">
+                                <i class="fas fa-trending-down"></i>
+                                -8% from yesterday
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card sensor-card">
+                        <div class="card-header">
+                            <div class="sensor-info">
+                                <div class="sensor-icon air">
+                                    <i class="fas fa-wind"></i>
+                                </div>
+                                <div class="sensor-data">
+                                    <h4>Air Quality (CO2)</h4>
+                                    <p class="value">380 ppm</p>
+                                </div>
+                            </div>
+                            <span class="badge excellent">excellent</span>
+                        </div>
+                        <div class="card-footer">
+                            <p class="location">Greenhouse B</p>
+                            <div class="trend">
+                                <i class="fas fa-trending-down"></i>
+                                -20 ppm from yesterday
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card sensor-card">
+                        <div class="card-header">
+                            <div class="sensor-info">
+                                <div class="sensor-icon water">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                <div class="sensor-data">
+                                    <h4>Water Quality pH</h4>
+                                    <p class="value">6.8</p>
+                                </div>
+                            </div>
+                            <span class="badge optimal">optimal</span>
+                        </div>
+                        <div class="card-footer">
+                            <p class="location">Irrigation System</p>
+                            <div class="trend">
+                                <i class="fas fa-trending-up"></i>
+                                +0.2 from yesterday
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Dashboard Grid -->
+            <div class="grid-2">
+                <!-- Crop Health Management -->
+                <div class="card">
+                    <h3 class="card-title">
+                        <i class="fas fa-eye"></i>
+                        Crop Health Management
+                    </h3>
+                    <div class="crop-list">
+                        <div class="crop-item">
+                            <div class="crop-info">
+                                <h4>Tomatoes</h4>
+                                <div class="crop-details">
+                                    <span>Health: excellent</span>
+                                    <span>•</span>
+                                    <span>Risk: low</span>
+                                    <span>•</span>
+                                    <span>Yield: 95%</span>
+                                </div>
+                                <p class="last-scan">Last AI scan: 2 hours ago</p>
+                            </div>
+                            <span class="badge excellent">excellent</span>
+                        </div>
+
+                        <div class="crop-item">
+                            <div class="crop-info">
+                                <h4>Corn</h4>
+                                <div class="crop-details">
+                                    <span>Health: good</span>
+                                    <span>•</span>
+                                    <span>Risk: medium</span>
+                                    <span>•</span>
+                                    <span>Yield: 87%</span>
+                                </div>
+                                <p class="last-scan">Last AI scan: 4 hours ago</p>
+                            </div>
+                            <span class="badge good">good</span>
+                        </div>
+
+                        <div class="crop-item">
+                            <div class="crop-info">
+                                <h4>Lettuce</h4>
+                                <div class="crop-details">
+                                    <span>Health: excellent</span>
+                                    <span>•</span>
+                                    <span>Risk: low</span>
+                                    <span>•</span>
+                                    <span>Yield: 92%</span>
+                                </div>
+                                <p class="last-scan">Last AI scan: 1 hour ago</p>
+                            </div>
+                            <span class="badge excellent">excellent</span>
+                        </div>
+
+                        <div class="crop-item">
+                            <div class="crop-info">
+                                <h4>Carrots</h4>
+                                <div class="crop-details">
+                                    <span>Health: good</span>
+                                    <span>•</span>
+                                    <span>Risk: low</span>
+                                    <span>•</span>
+                                    <span>Yield: 89%</span>
+                                </div>
+                                <p class="last-scan">Last AI scan: 3 hours ago</p>
+                            </div>
+                            <span class="badge good">good</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Livestock Monitoring -->
+                <div class="card">
+                    <h3 class="card-title">
+                        <i class="fas fa-heart"></i>
+                        Livestock Monitoring
+                    </h3>
+                    <div class="livestock-list">
+                        <div class="livestock-item">
+                            <div class="livestock-info">
+                                <h4>Dairy Cows</h4>
+                                <div class="livestock-details">
+                                    <span>Count: 45</span>
+                                    <span>•</span>
+                                    <span>Feeding: automated</span>
+                                </div>
+                                <p class="last-check">Last check: 30 min ago</p>
+                            </div>
+                            <span class="badge healthy">healthy</span>
+                        </div>
+
+                        <div class="livestock-item">
+                            <div class="livestock-info">
+                                <h4>Sheep</h4>
+                                <div class="livestock-details">
+                                    <span>Count: 120</span>
+                                    <span>•</span>
+                                    <span>Feeding: scheduled</span>
+                                </div>
+                                <p class="last-check">Last check: 1 hour ago</p>
+                            </div>
+                            <span class="badge healthy">healthy</span>
+                        </div>
+
+                        <div class="livestock-item">
+                            <div class="livestock-info">
+                                <h4>Chickens</h4>
+                                <div class="livestock-details">
+                                    <span>Count: 200</span>
+                                    <span>•</span>
+                                    <span>Feeding: automated</span>
+                                </div>
+                                <p class="last-check">Last check: 15 min ago</p>
+                            </div>
+                            <span class="badge excellent">excellent</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weather & Automation Systems -->
+            <div class="grid-2">
+                <!-- Weather Monitoring -->
+                <div class="card">
+                    <h3 class="card-title">
+                        <i class="fas fa-cloud-rain"></i>
+                        Weather Monitoring
+                    </h3>
+                    <div class="weather-list">
+                        <div class="weather-item">
+                            <div class="weather-info">
+                                <h4>Rainfall</h4>
+                                <p class="weather-value">2.4mm</p>
+                                <p class="weather-forecast">15mm expected</p>
+                            </div>
+                            <span class="badge low">low</span>
+                        </div>
+
+                        <div class="weather-item">
+                            <div class="weather-info">
+                                <h4>Wind Speed</h4>
+                                <p class="weather-value">12 km/h</p>
+                                <p class="weather-forecast">Increasing to 18 km/h</p>
+                            </div>
+                            <span class="badge normal">normal</span>
+                        </div>
+
+                        <div class="weather-item">
+                            <div class="weather-info">
+                                <h4>UV Index</h4>
+                                <p class="weather-value">6.2</p>
+                                <p class="weather-forecast">Peak at 8.1 today</p>
+                            </div>
+                            <span class="badge high">high</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Automation Systems -->
+                <div class="card">
+                    <h3 class="card-title">
+                        <i class="fas fa-bolt"></i>
+                        Automation Systems
+                    </h3>
+                    <div class="automation-list">
+                        <div class="automation-item">
+                            <div class="automation-info">
+                                <h4>Irrigation Control</h4>
+                                <div class="automation-details">
+                                    <span>Mode: auto</span>
+                                    <span>•</span>
+                                    <span>Efficiency: 94%</span>
+                                </div>
+                            </div>
+                            <span class="badge active">active</span>
+                        </div>
+
+                        <div class="automation-item">
+                            <div class="automation-info">
+                                <h4>Greenhouse Climate</h4>
+                                <div class="automation-details">
+                                    <span>Mode: auto</span>
+                                    <span>•</span>
+                                    <span>Efficiency: 91%</span>
+                                </div>
+                            </div>
+                            <span class="badge active">active</span>
+                        </div>
+
+                        <div class="automation-item">
+                            <div class="automation-info">
+                                <h4>Livestock Feeding</h4>
+                                <div class="automation-details">
+                                    <span>Mode: scheduled</span>
+                                    <span>•</span>
+                                    <span>Efficiency: 98%</span>
+                                </div>
+                            </div>
+                            <span class="badge active">active</span>
+                        </div>
+
+                        <div class="automation-item">
+                            <div class="automation-info">
+                                <h4>Pest Control</h4>
+                                <div class="automation-details">
+                                    <span>Mode: manual</span>
+                                    <span>•</span>
+                                    <span>Efficiency: 85%</span>
+                                </div>
+                            </div>
+                            <span class="badge standby">standby</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alerts & AI Insights -->
+            <div class="card">
+                <h3 class="card-title">
+                    <i class="fas fa-brain"></i>
+                    AI-Powered Alerts & Insights
+                </h3>
+                <div class="grid-2">
+                    <div class="alert-item warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <div class="alert-content">
+                            <p>Soil moisture low in Field C - Auto irrigation activated</p>
+                            <div class="alert-meta">
+                                <span>5 minutes ago</span>
+                                <span class="badge medium">medium</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert-item info">
+                        <i class="fas fa-clock"></i>
+                        <div class="alert-content">
+                            <p>Drone surveillance completed for tomato crop health assessment</p>
+                            <div class="alert-meta">
+                                <span>15 minutes ago</span>
+                                <span class="badge low">low</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert-item success">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="alert-content">
+                            <p>AI detected optimal harvest conditions in Field A</p>
+                            <div class="alert-meta">
+                                <span>1 hour ago</span>
+                                <span class="badge high">high</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert-item warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <div class="alert-content">
+                            <p>Livestock feeding system requires maintenance</p>
+                            <div class="alert-meta">
+                                <span>2 hours ago</span>
+                                <span class="badge medium">medium</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology Integration Panel -->
+            <div class="card tech-panel">
+                <h3 class="card-title">
+                    <i class="fas fa-shield-alt"></i>
+                    Integrated Technologies
+                </h3>
+                <div class="grid-4">
+                    <div class="tech-item">
+                        <i class="fas fa-wifi"></i>
+                        <span class="tech-name">IoT Network</span>
+                        <span class="tech-status">245 Devices</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-camera"></i>
+                        <span class="tech-name">Drone Fleet</span>
+                        <span class="tech-status">4 Active</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-brain"></i>
+                        <span class="tech-name">AI Analytics</span>
+                        <span class="tech-status">Real-time</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-database"></i>
+                        <span class="tech-name">Cloud Storage</span>
+                        <span class="tech-status">99.9% Uptime</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="card control-panel">
+                <h3 class="card-title">Smart Control Center</h3>
+                <div class="grid-4">
+                    <button class="control-btn">
+                        <i class="fas fa-water"></i>
+                        <span>Irrigation Control</span>
+                    </button>
+                    <button class="control-btn">
+                        <i class="fas fa-home"></i>
+                        <span>Greenhouse Control</span>
+                    </button>
+                    <button class="control-btn">
+                        <i class="fas fa-camera"></i>
+                        <span>Drone Survey</span>
+                    </button>
+                    <button class="control-btn">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>AI Analytics</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p>© 2024 AgriSmart Monitor. Revolutionizing agriculture through AI, IoT, and precision farming.</p>
+                <div class="status-indicators">
+                    <span class="status-item">
+                        <div class="status-dot green"></div>
+                        All Systems Online
+                    </span>
+                    <span class="status-item">
+                        <div class="status-dot blue"></div>
+                        IoT Network Active
+                    </span>
+                    <span class="status-item">
+                        <div class="status-dot purple"></div>
+                        AI Processing
+                    </span>
+                    <span class="status-item">
+                        <div class="status-dot yellow"></div>
+                        Cloud Syncing
+                    </span>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Update current time
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('current-time').textContent = now.toLocaleString();
+        }
+        
+        updateTime();
+        setInterval(updateTime, 1000);
+
+        // Add hover effects and animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
